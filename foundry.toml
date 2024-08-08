@@ -1,6 +1,19 @@
 [profile.default]
 src = "src"
 out = "out"
+test = "test"
 libs = ["lib"]
+solc = '0.8.24'
+
+remappings = [
+    '@chainlink/contracts-ccip=lib/ccip/contracts',
+    '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/',
+    '@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/',
+    '@chainlink/local/=lib/chainlink-local/',
+]
+
+[rpc_endpoints]
+ethereumSepolia = "${SEPOLIA_RPC_URL}"
+avalancheFuji = "${FUJI_RPC_URL}"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
