@@ -22,7 +22,7 @@ To do this, we wrote a comprehensive Foundry test you can see [here](https://git
 7. Call `TransferUSDC::transferUsdc()` to transfer 1 USDC from an EOA to the receiver contract.
 8. Call `CCIPLocalSimulatorFork::switchChainAndRouteMessage()` to route the CCIP message.
 
-Following these steps, the `MockCCIPRouter::MsgExecuted`, which looks as follows,
+Following these steps, the `MockCCIPRouter::MsgExecuted` event, which looks as follows,
 
 ```JavaScript
 event MsgExecuted(bool success, bytes retData, uint256 gasUsed);
