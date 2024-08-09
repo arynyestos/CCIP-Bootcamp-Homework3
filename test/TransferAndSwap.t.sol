@@ -31,7 +31,8 @@ contract CrossChainTransferUsdcTest is Test {
     address fujiRouter;
     address fujiLink;
     address fujiUsdc;
-    address USER = address(0x31e0FacEa072EE621f22971DF5bAE3a1317E41A4);
+    uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+    address USER = vm.addr(deployerPrivateKey);
     address sepoliaUsdc; // = 0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238;
 
     function setUp() public {
@@ -118,7 +119,8 @@ contract CrossChainTransferUsdcTest is Test {
 
         // vm.selectFork(sepoliaFork);
         // assertEq(vm.activeFork(), sepoliaFork);
-        // ccipLocalSimulatorFork.switchChainAndRouteMessage(sepoliaFork);
-        // assertEq(IERC20(sepoliaUsdc).balanceOf(address(sepoliaReceiver)), 1_000_000);
+
+        ccipLocalSimulatorFork.switchChainAndRouteMessage(sepoliaFork);
+        assertEq(IERC20(sepoliaUsdc).balanceOf(address(sepoliaReceiver)), 1_000_000);
     }
 }
