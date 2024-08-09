@@ -28,7 +28,7 @@ Following these steps, the `MockCCIPRouter::MsgExecuted` event, which looks as f
 event MsgExecuted(bool success, bytes retData, uint256 gasUsed);
 ```
 
-should be emitted, giving us the `gasUsed` value we were looking for to get an estimation of the gas consumption of the `_ccipReceive()` in this use case.
+should be emitted, giving us the `gasUsed` value we were looking for, to get an estimation of the gas consumption of the `_ccipReceive()` function in this use case.
 
 ## Results
 
