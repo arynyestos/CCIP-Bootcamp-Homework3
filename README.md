@@ -34,6 +34,10 @@ should be emitted, giving us the `gasUsed` value we were looking for, to get an 
 
 However, the outcome wasn't as expected. The transaction went so far as to call `EVM2EVMOffRamp::executeSingleMessage()` on [Sepolia](https://sepolia.etherscan.io/address/0x000b26f604eAadC3D874a4404bde6D64a97d95ca#code), after burning the USDC token, by calling `USDCTokenPool::lockOrBurn` on [Fuji](https://testnet.snowtrace.io/address/0x4ED8867f9947A5fe140C9dC1c6f207F3489F501E/contract/43113/code) but an unhandled revert was thrown upon calling `IPool::releaseOrMint()` (cannot be sure which contract exactly it is, because it is not verified on [Sepolia Etherscan](https://sepolia.etherscan.io/address/0x3fF675B880aC9F67AC6f4342FfD9e99B80469bAd)), as shown in the screenshot below:
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e01966c7-c45f-4720-acf1-6dddb6e02c63">
+</p>
+
 ![image](https://github.com/user-attachments/assets/e01966c7-c45f-4720-acf1-6dddb6e02c63)
 
 Even the `RateLimiter::TokenConsumed` event got emitted for 1 USDC, but since the transaction didn't go through, the `MockCCIPRouter::MsgExecuted` event didn't get emitted, so we couldn't get the gas estimation we were looking for ☹
