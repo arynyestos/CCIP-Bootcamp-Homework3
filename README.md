@@ -38,6 +38,4 @@ However, the outcome wasn't as expected. The transaction went so far as to call 
   <img src="https://github.com/user-attachments/assets/e01966c7-c45f-4720-acf1-6dddb6e02c63">
 </p>
 
-![image](https://github.com/user-attachments/assets/e01966c7-c45f-4720-acf1-6dddb6e02c63)
-
 Even the `RateLimiter::TokenConsumed` event got emitted for 1 USDC, but since the transaction didn't go through, the `MockCCIPRouter::MsgExecuted` event didn't get emitted, so we couldn't get the gas estimation we were looking for ☹
