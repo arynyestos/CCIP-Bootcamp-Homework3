@@ -2,7 +2,7 @@
 
 ### Disclaimer
 
-This README explains the steps I took and the reason I didn't fully achieve my goal for this last assignment. Due to the fact that I believe to have proved my compromise to the bootcamp and to have learned more than enough to be awarded the certificate of completion, along with the fact that **I got married the week after the bootcamp**, this was left unfinished. Nonetheless, I intend to find what the issue was after the summer, hopefully before the RWA bootcamp. Also, please bear in mind that I attempted to complete the exercise in a more complex way than expected when evaluating my work for this exercise.
+This README explains the steps I took and the reason I didn't fully achieve my goal for this last assignment. Due to the fact that I believe to have proved my compromise to the course and to have learned more than enough to be awarded the certificate of completion, along with the fact that **I got married the week after the bootcamp**, this was left unfinished. Nonetheless, I intend to find what the issue was after the summer, hopefully before the RWA bootcamp. Also, please bear in mind that I attempted to complete the exercise in a more complex way than expected when evaluating my work for this exercise.
 
 ---
 
